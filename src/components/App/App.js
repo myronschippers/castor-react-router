@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import Header from '../Header/Header';
 
-class App extends React.Component {
+import { HashRouter as Router, Route } from 'react-router-dom';
+
+// CUSTOM COMPONENTS
+import Header from '../Header/Header';
+import HomePage from '../../pages/HomePage/HomePage';
+import PlantsPage from '../../pages/PlantsPage/PlantsPage';
+
+class App extends Component {
   render() {
     return (
       <div>
         <Header />
         <main className="container">
           {/* HOME PAGE */}
-          <h2>Home</h2>
-          <p>Welcome to the React Router of your dreams</p>
+          <HomePage />
 
           {/* PLANTS PAGE */}
-          <h2>Plants</h2>
-          <p>Plants are an integral part of our ecosystem.</p>
+          <PlantsPage />
 
           {/* ANIMALS PAGE */}
           <h2>Animals</h2>
