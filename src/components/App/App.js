@@ -2,30 +2,48 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
-import { HashRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 // CUSTOM COMPONENTS
 import Header from '../Header/Header';
 import HomePage from '../../pages/HomePage/HomePage';
 import PlantsPage from '../../pages/PlantsPage/PlantsPage';
 import AnimalsPage from '../../pages/AnimalsPage/AnimalsPage';
+import ContactPage from '../../pages/ContactPage/ContactPage';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <Header />
-        <main className="container">
-          {/* HOME PAGE */}
-          <HomePage />
+      <Router>
+        <div>
+          <Header />
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/plants">Plants</Link>
+              </li>
+              <li>
+                <Link to="/animals">Animals</Link>
+                {/* <a href="#/animals">Animals</a> */}
+              </li>
+            </ul>
+          </nav>
+          <main className="container">
+            {/* HOME PAGE */}
+            <Route exact path="/" component={HomePage} />
 
-          {/* PLANTS PAGE */}
-          <PlantsPage />
+            {/* PLANTS PAGE */}
+            <Route exact path="/plants" component={PlantsPage} />
 
-          {/* ANIMALS PAGE */}
-          <AnimalsPage />
-        </main>
-      </div>
+            {/* ANIMALS PAGE */}
+            <Route exact path="/animals" component={AnimalsPage} />
+            <Route exact path="/contact" component={ContactPage} />
+          </main>
+        </div>
+      </Router>
     );
   }
 }
