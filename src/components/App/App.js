@@ -8,6 +8,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import HomePage from '../../pages/HomePage/HomePage';
 import PlantsPage from '../../pages/PlantsPage/PlantsPage';
+import AnimalsPage from '../../pages/AnimalsPage/AnimalsPage';
 
 class App extends Component {
   render() {
@@ -22,8 +23,7 @@ class App extends Component {
           <PlantsPage />
 
           {/* ANIMALS PAGE */}
-          <h2>Animals</h2>
-          <p>Cute bundles of joy, not when they bite.</p>
+          <AnimalsPage />
         </main>
       </div>
     );
